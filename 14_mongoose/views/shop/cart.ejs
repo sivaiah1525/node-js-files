@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs') %>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <main>
+            <% if (products.length > 0) { %>
+            <ul>
+              <% products.forEach(p => { %>
+              <div class="card card-body m-3">
+                <li class="d-flex">
+                  <h5 class="m-3"><%= p.productId.title %></h5>
+                  <h5 class="m-3">Quantity: <%= p.quantity %></h5>
+                  <form action="/products/cart/delete" method="POST">
+                    <input
+                      type="hidden"
+                      value="<%= p.productId._id %>"
+                      name="id"
+                    />
+                    <button class="btn btn-outline-danger" type="submit">
+                      Delete
+                    </button>
+                  </form>
+                </li>
+              </div>
+              <% }) %>
+            </ul>
+            <div class="text-center">
+              <form method="POST" action="/products/orders">
+                <button class="btn btn-outline-success">Order</button>
+              </form>
+            </div>
+            <% } else { %>
+            <h1>No Products in Cart!</h1>
+            <% } %>
+          </main>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    <%- include('../includes/end.ejs') %>
+  </body>
+</html>

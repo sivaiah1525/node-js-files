@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS TEMPLATE STRING</title>
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+    <style>
+      .container {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table class="table table-bordered mt-5 text-center">
+        <thead class="bg-primary text-white text-center">
+          <tr>
+            <th class="text-center">S.NO</th>
+            <th class="text-center">NAME</th>
+            <th class="text-center">AGE</th>
+            <th class="text-center">PLACE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(function(e){ %>
+          <tr>
+            <td><%= e.id %></td>
+            <td><%= e.name %></td>
+            <td><%= e.age %></td>
+            <td><%= e.place %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

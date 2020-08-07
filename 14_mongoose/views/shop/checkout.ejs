@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs') %>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <form>
+            <!-- Material form register -->
+            <div class="card">
+              <h5 class="card-header default-color white-text text-center py-4">
+                <strong>Add Product</strong>
+              </h5>
+              <div class="card-body  mt-5 px-lg-5 pt-0">
+                <form class="text-center" style="color: #757575;" action="#!">
+                  <div class="md-form mt-0">
+                    <input
+                      type="email"
+                      id="materialRegisterFormEmail"
+                      class="form-control"
+                    />
+                    <label for="materialRegisterFormEmail">Title</label>
+                  </div>
+                  <div class="md-form mt-0">
+                    <input
+                      type="text"
+                      id="materialRegisterFormEmail"
+                      class="form-control"
+                    />
+                    <label for="materialRegisterFormEmail">Image Url</label>
+                  </div>
+                  <div class="md-form mt-0">
+                    <input
+                      type="text"
+                      id="materialRegisterFormEmail"
+                      class="form-control"
+                    />
+                    <label for="materialRegisterFormEmail">Price</label>
+                  </div>
+                  <div class="md-form mt-0">
+                    <input
+                      type="number"
+                      id="materialRegisterFormEmail"
+                      class="form-control"
+                    />
+                    <label for="materialRegisterFormEmail">Description</label>
+                  </div>
+                  <button
+                    class=" font-weight-bold btn btn-outline-default btn-rounded btn-block my-4 waves-effect z-depth-0"
+                    type="submit"
+                  >
+                    Add Product
+                  </button>
+                  </form>   
+              </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    <%- include('../includes/end.ejs') %>
+  </body>
+</html>

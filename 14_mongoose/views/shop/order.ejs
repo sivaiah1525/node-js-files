@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs') %>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <main>
+            <% if (orders.length <= 0) { %>
+            <h1>Nothing there!</h1>
+            <% } else { %>
+            <ul>
+              <% orders.forEach(order => { %>
+              <li>
+                <h1># <%= order.id %></h1>
+                <ul>
+                  <% order.products.forEach(product => { %>
+                  <li>
+                    <%= product.title %> (<%= product.orderItem.quantity %>)
+                  </li>
+                  <% }); %>
+                </ul>
+              </li>
+              <% }); %>
+            </ul>
+            <% } %>
+          </main>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+    <%- include('../includes/end.ejs') %>
+  </body>
+</html>

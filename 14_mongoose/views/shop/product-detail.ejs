@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../includes/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs') %>
+    <div class="container mt-5">
+      <div class="row ">
+        <div class="col-md-12">
+          <!-- Card -->
+          <div class="card m-3">
+            <!-- Card image -->
+            <img
+              class="card-img-top img-fluid"
+              src="<%= product.imageUrl%>"
+              alt="Card image cap"
+            />
+
+            <!-- Card content -->
+            <div class="card-body">
+              <!-- Title -->
+              <h4 class="card-title"><a> <%= product.title %> </a></h4>
+              <!-- Text -->
+              <p class="card-text">
+                <%= product.description%>
+              </p>
+              <!-- Button -->
+              <%- include('../includes/add-cart.ejs') %>
+            </div>
+          </div>
+          <!-- Card -->
+        </div>
+      </div>
+    </div>
+    <%- include('../includes/end.ejs') %>
+  </body>
+</html>
